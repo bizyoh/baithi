@@ -1,0 +1,53 @@
+package com.demo.repositories;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.demo.models.Restauranttable;
+
+@Repository
+public interface TableRepositories extends CrudRepository<Restauranttable, Integer> {
+	
+	@Query("from Restauranttable where status = :status")
+	public List<Restauranttable> condition1(@Param("status") boolean status);
+	
+	@Query("from Restauranttable where price >= :min and price <= :max")
+	public List<Restauranttable> condition2(@Param("min") double min,@Param("max") double max);
+	
+	@Query("from Restauranttable where created >= :start and created <= :end")
+	public List<Restauranttable> condition3(@Param("start") Date start,@Param("end") Date end);
+	
+	@Query("from Restauranttable where name like %:keyword%")
+	public List<Restauranttable> like(@Param("keyword") String keyword );
+	
+	@Query("from Restauranttable order by price desc")
+	public List<Restauranttable> sort1();
+	
+	@Query("from Restauranttable where status =: status order by id desc")
+	public List<Restauranttable> sort2(@Param("status") boolean status);
+	
+	@Query(value= "select * form Restauranttable limit :n", nativeQuery = true)
+	public List<Restauranttable> limit1(@Param("n") int n);
+	
+	@Query(value= "select * form Restauranttable limit :start, :n", nativeQuery = true)
+	public List<Restauranttable> limit2(@Param("start") int start, @Param("n") int n);
+	
+	@Query(value= "select * form Restauranttable order by id desc limit :start, :n", nativeQuery = true)
+	public List<Restauranttable> limit3(@Param("start") int start, @Param("n") int n);
+	
+	@Query(value= "select * form Restauranttable where status =:status order by id desc limit :start, :n", nativeQuery = true)
+	public List<Restauranttable> limit4(@Param("status") boolean status,@Param("start") int start, @Param("n") int n);
+	
+	@Query("select sum(quantity) from Restauranttable")
+	public long sum1();
+	
+	@Query("select sum(price * quantity) from Restauranttable")
+	public double sum2();
+
+		
+}

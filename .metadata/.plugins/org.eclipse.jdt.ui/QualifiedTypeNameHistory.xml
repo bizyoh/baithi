@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.demo.models.Restauranttable"/>
+    <fullyQualifiedTypeName name="com.demo.services.TableService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.demo.repositories.TableTypeRepository"/>
+    <fullyQualifiedTypeName name="com.demo.services.TableTypeService"/>
+    <fullyQualifiedTypeName name="com.demo.repositories.BookingRepository"/>
+    <fullyQualifiedTypeName name="com.demo.services.BookingService"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.Authentication"/>
+    <fullyQualifiedTypeName name="com.demo.services.AccountService"/>
+    <fullyQualifiedTypeName name="com.demo.repositories.AccountRepository"/>
+    <fullyQualifiedTypeName name="com.demo.models.Booking"/>
+    <fullyQualifiedTypeName name="com.demo.models.Tabletype"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>index user</h3>
+<a href="${pageContext.request.contextPath }/homeadmin/index"">Admin</a>
+
+<h3>Edit</h3>
+	
+		<table>
+		
+			<tr>
+				<td valign="top">Table</td>
+				<td><c:forEach var="type" items="${tabletypes }">
+					<input type="checkbox" name="roles" value="${type.id }"> ${type.name }
+				</c:forEach></td>
+			</tr>
+			
+			<tr>
+				<td>Name</td>
+				<td><s:input path="name" /></td>
+			</tr>
+			<tr>
+				<td>Status</td>
+				<td><s:checkbox path="status" /></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="save"></td>
+			</tr>
+		</table>
+
+
+</body>
+</html>

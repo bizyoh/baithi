@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>index user</h3>
+<a href="${pageContext.request.contextPath }/homeadmin/index">Admin</a>
+
+<h3>Edit</h3>
+	
+		<table>
+			<c:forEach var="table" items="${tables }">
+			<tr>
+				<td valign="top">Table ${table.tabletype.name} ${table.seat}</td>
+				<td>
+				<a href="${page.Context.request.contextPath }/home/booking?table=${table.id}">Book</a>
+				</td>
+			</tr>
+			</c:forEach>
+			
+		</table>
+
+
+</body>
+</html>

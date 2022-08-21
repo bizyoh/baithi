@@ -1,0 +1,75 @@
+package com.demo.services;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.demo.models.Product;
+import com.demo.models.ProductInfo;
+import com.demo.repositories.TableRepository;
+
+@Service
+public class TableServiceImpl implements TableService {
+	
+	@Autowired
+	private TableRepository TableRepository;
+
+	@Override
+	public Iterable<Product> findAll() {		
+		return TableRepository.findAll();
+	}
+
+	@Override
+	public Product find(int id) {
+		return TableRepository.findById(id).get();
+	}
+
+	@Override
+	public Product save(Product product) {
+		return TableRepository.save(product);
+	}
+
+	@Override
+	public boolean delete(int id) {
+		try {
+			TableRepository.deleteById(id);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
+
+	@Override
+	public List<Product> condition1(boolean status) {
+		// TODO Auto-generated method stub
+		return TableRepository.condition1(status);
+	}
+
+	@Override
+	public List<Product> condition2(double min, double max) {
+		// TODO Auto-generated method stub
+		return TableRepository.condition2(min, max);
+	}
+
+	@Override
+	public List<Product> condition3(Date start, Date end) {
+		// TODO Auto-generated method stub
+		return TableRepository.condition3(start, end);
+	}
+
+	@Override
+	public List<ProductInfo> select1() {
+		// TODO Auto-generated method stub
+		return TableRepository.select1();
+	}
+
+	@Override
+	public List<Product> like(String keyword) {
+		
+		return TableRepository.like(keyword);
+	}
+
+}

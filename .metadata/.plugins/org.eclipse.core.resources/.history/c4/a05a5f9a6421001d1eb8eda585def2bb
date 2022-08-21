@@ -1,0 +1,24 @@
+package com.demo.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.demo.models.Account;
+import com.demo.models.Booking;
+import com.demo.models.Role;
+import com.demo.models.Tabletype;
+
+@Repository
+public interface BookingRepository extends CrudRepository<Booking, Integer> {
+
+
+	@Query("from Booking")
+	public List<Booking> GetAll();
+	@Query("select b from Booking where b.account.id =: id")
+	public List<Booking> GetAllByUserId(@Param("id") int id);
+
+}

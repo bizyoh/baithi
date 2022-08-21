@@ -1,0 +1,19 @@
+spring.mvc.view.prefix = /WEB-INF/views/
+spring.mvc.view.suffix = .jsp
+spring.mvc.static-path-pattern=/resources/**
+server.port=9599
+spring.datasource.url= jdbc:mysql://localhost:3306/book_table_online
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=tanphuc11997@gmail.com
+spring.mail.password=kingbos2007
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.connectiontimeout=5000
+spring.mail.properties.mail.smtp.timeout=5000
+spring.mail.properties.mail.smtp.writetimeout=5000

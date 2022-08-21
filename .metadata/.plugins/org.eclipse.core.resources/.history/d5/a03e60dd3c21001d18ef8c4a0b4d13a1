@@ -1,0 +1,32 @@
+package com.demo.services;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.demo.models.Restauranttable;
+import com.demo.models.Tabletype;
+import com.demo.repositories.TableRepository;
+import com.demo.repositories.TableTypeRepository;
+
+@Service
+public class TableTypeImpl implements TableTypeService {
+	
+	@Autowired
+	private TableTypeRepository tableTypeRepository;
+
+	@Override
+	public Iterable<Tabletype> GetAll() {
+		Iterable<Tabletype>tabletypes = tableTypeRepository.findAll();
+		return tabletypes;
+	}
+
+	@Override
+	public Tabletype Save(Tabletype tabletype) {
+		Tabletype table = tableTypeRepository.save(tabletype);
+		return table;
+	}
+
+}
